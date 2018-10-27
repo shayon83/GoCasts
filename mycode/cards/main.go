@@ -3,13 +3,11 @@ package main
 var deckType string
 
 func main() {
-	cards := deck{"Ace of Spades", newCard()}
+	cards := newDeck()
 
-	cards = append(cards, "Six of Spades")
+	hand, remainingDeck := deal(cards, 4)
 
-	cards.print()
-}
+	hand.print()
+	remainingDeck.print()
 
-func newCard() string {
-	return "Five of Diamonds"
 }
